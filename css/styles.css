@@ -128,8 +128,7 @@ header nav .mobileMenu .mobilelink:hover {
 }
 .hero .profileImg {
   transition: 1s ease-in;
-  height: 80%;
-  bottom: 10%;
+  bottom: 0;
 }
 .hero .gradient {
   height: 120%;
@@ -397,7 +396,7 @@ header nav .mobileMenu .mobilelink:hover {
   position: relative;
   background-image: url(../images/backgrounds/contactbg.jpg);
   display: flex;
-  height: 30vh;
+  height: 40vh;
   flex-direction: column;
   gap: 20px;
 }
