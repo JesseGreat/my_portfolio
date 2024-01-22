@@ -1,0 +1,115 @@
+.about {
+  position: relative;
+  overflow-x: hidden;
+
+  .film {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 94%);
+  }
+
+  h1 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    top: 0;
+    font-size: 400px;
+    text-transform: uppercase;
+    animation: textPan 30s linear infinite;
+    transition: .3s;
+    font-weight: 700;
+  }
+  .profileCard {
+    align-items: center;
+
+    .profileInfo {
+      color: gray;
+
+      h4 {
+        font-size: 18px;
+        margin-bottom: 14px;
+        color: var(--white);
+      }
+      p {
+        font-size: 13px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+.profileGroup {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+//mobile Only styles
+@media (max-width: 781px){
+  .about {
+    padding: 13vh 20px 40px;
+    height: auto;
+
+    h1 {
+      width: 750%;
+    }
+
+    .profileCard {
+      display: block;
+      gap: 20px;
+
+      .profileInfo {
+        margin: 20px 0 0;
+      }
+
+      .profileGroup {
+        flex-direction: row;
+
+        .profile {
+          width: 50%;
+        }
+      }
+    }
+  }
+  @keyframes textPan {
+    from{ left: 100%; }
+    to { left: -750%; }
+  }
+}
+//Desktop Only styles
+@media (min-width: 780px){
+  .about {
+    padding: 15vh 100px 40px;
+    height: 100vh;
+
+    h1 {
+      width: 250%;
+    }
+
+    .profileCard {
+      display: flex;
+      gap: 60px;
+
+      .profileInfo {
+        margin: 0 0 0 40px;
+      }
+
+      .profileGroup {
+        flex-direction: column;
+
+        .profile {
+          width: 250px;
+        }
+      }
+    }
+  }
+  @keyframes textPan {
+    from{ left: 100%; }
+    to { left: -250%; }
+  }
+}

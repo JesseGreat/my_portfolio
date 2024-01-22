@@ -1,0 +1,172 @@
+@import "header";
+@import "hero";
+@import "work";
+@import "about";
+@import "contact";
+
+* {
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: sans-serif;
+  font-weight: 100;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --blue : #127b87;
+  --white: #d7d7d7;
+  --gray: #636363;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border-radius: 2px;
+  border-left: 3px solid red;
+  border-bottom: 3px solid white;
+  background: transparent;
+  color: white;
+  transition: .3s;
+
+  &:hover {
+    color: var(--blue);
+    border-left: 3px solid var(--blue);
+    border-bottom: 3px solid var(--white);
+    transform: scale(.98);
+    box-shadow: inset -3px 4px 4px 0 #00000054;
+  }
+}
+
+.logo {
+  font-size: 16px;
+  color: var(--blue);
+  font-style: italic;
+}
+
+.margin {
+  margin-left: 10%;
+}
+
+.hide {
+  display: none;
+}
+
+.z-index {
+  position: relative;
+  z-index: 4;
+}
+
+.head {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  .headDash {
+    display: flex;
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    transform: rotate(10deg);
+  }
+
+  .headDashLeft {
+    width: 15px;
+    z-index: 2;
+    background: var(--blue);
+    left: -3px;
+  }
+  .headDashRight {
+    background: var(--white);
+    left: 18px;
+  }
+
+  .heading {
+    position: relative;
+    font-weight: 100;
+    text-align: start;
+    margin-bottom: -2px;
+    color: var(--blue);
+    transition: 1s ease-in-out;
+  }
+}
+
+//Global Classes
+.upperCase {
+  text-transform: uppercase;
+}
+
+.headingHide {
+  left: -10%;
+}
+.imageHide {
+  opacity: 0;
+  right: 35%;
+}
+
+.imageShow {
+  opacity: 1;
+  animation-delay: 0.7s;
+}
+.mobileOnly {
+  @media (min-width: 780px){
+    display: none;
+  }
+}
+.desktopOnly {
+  @media (max-width: 781px){
+    display: none;
+  }
+}
+.mobileMenuOpen {
+  right: 0;
+}
+.mobileMenuClosed {
+  right: -50%;
+}
+
+//mobile Only styles
+@media (max-width: 781px){
+  button {
+    width: 85px;
+    height: 28px;
+    font-size: 11px;
+  }
+  .heading {
+    font-size: 17px;
+  }
+  .imageShow {
+    right: 2%;
+  }
+  .headingShow {
+    left: 10.3%;
+  }
+}
+//Desktop Only styles
+@media (min-width: 780px){
+  button {
+    width: 120px;
+    height: 35px;
+    font-size: 13px;
+  }
+  .heading {
+    font-size: 25px;
+  }
+  .imageShow {
+    right: 12%;
+  }
+  .headingShow {
+    left: 3.3%;
+  }
+}

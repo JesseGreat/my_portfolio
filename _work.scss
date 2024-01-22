@@ -1,0 +1,115 @@
+.work {
+  z-index: 4;
+  background: hsl(0, 0%, 9%);
+  position: relative;
+  height: 100vh;
+
+  .works {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+    .jobCard {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+
+      &:hover .background {
+        transform: scale(1.03);
+      }
+      &:hover .detaile .dash {
+        width: 100px;
+      }
+      &:hover .link {
+        transform: rotate(67.5deg);
+      }
+
+      .background {
+        filter: brightness(.6);
+        transition: .3s;
+        width: 100%;
+        height: 100%;
+      }
+
+      .detaile {
+        position: absolute;
+        bottom: 1%;
+        left: 3%;
+
+        .dash {
+          position: absolute;
+          transition: .3s;
+          width: 50px;
+          height: 1.97px;
+        }
+        .top {
+          background-color: var(--white);
+          top: 3px;
+          left: 4px;
+        }
+        .bottom {
+          background-color: red;
+          top: 42%;
+          left: 5%;
+        }
+        h5 {
+          z-index: 2;
+          font-style: italic;
+          position: relative;
+          color: var(--white);
+        }
+      }
+      .link {
+        position: absolute;
+        transition: .3s;
+        right: 10px;
+        bottom: 10px;
+        width: 28px;
+      }
+    }
+  }
+}
+
+//mobile Only styles
+@media (max-width: 781px){
+  .work {
+    padding: 13vh 20px 40px;
+
+    .works {
+      gap: 12px;
+
+      .jobCard {
+        height: 120px;
+        .detaile {
+          h5{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+//Desktop Only styles
+@media (min-width: 780px){
+  .work {
+    padding: 15vh 100px 40px;
+
+    .works {
+      gap: 40px;
+
+      .jobCard {
+        height: 150px;
+        .detaile {
+          h5{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.contact {
+  position: relative;
+  background-image: url(../images/backgrounds/contactbg.jpg);
+  display: flex;
+  height: 30vh;
+  flex-direction: column;
+  gap: 20px;
+
+  h4 {
+    font-size: 18px;
+  }
+
+  .contactLinks {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .back2top {
+    position: absolute;
+    right: 20px;
+    color: var(--gray);
+    bottom: 15px;
+    font-size: 13px;
+
+    img {
+      transform: rotate(-90deg);
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+//mobile Only styles
+@media (max-width: 781px){
+  .contact {
+    padding: 20px;
+
+    .contactLinks {
+      gap: 20px;
+    }
+  }
+}
+//Desktop Only styles
+@media (min-width: 780px){
+  .contact {
+    padding: 30px 100px 70px;
+
+    .contactLinks {
+      gap: 5%;
+    }
+  }
+}

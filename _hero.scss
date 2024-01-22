@@ -1,0 +1,110 @@
+.hero {
+  display: flex;
+  height: 100vh;
+  align-items: start;
+  flex-direction: column;
+  gap: 15px;
+  background: linear-gradient(45deg, black, #051119, black);
+
+  h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    width: 40%;
+    margin-left: 10%;
+    font-weight: 100;
+    z-index: 3;
+
+    strong {
+      color: var(--blue);
+      font-size: 50px;
+      font-weight: 700;
+    }
+  }
+
+  .role {
+    margin-left: 10%;
+    z-index: 3;
+  }
+
+  p {
+    width: 40%;
+    margin: 0  0 5% 10%;
+    font-size: 12px;
+    color: #837f7f;
+    z-index: 3;
+  }
+
+  .heroBtn {
+    z-index: 3;
+  }
+
+  .profileImg {
+    position: absolute;
+    z-index: 2;
+  }
+
+  .profileImg {
+    transition: 1s ease-in;
+    height: 80%;
+    bottom: 10%;
+  }
+
+  .gradient {
+    height: 120%;
+    position: absolute;
+    transform: rotate(10deg);
+    z-index: 2;
+    top: -9%;
+    width: 70%;
+    background: linear-gradient(45deg, black, #051119, black);
+  }
+
+  .bar {
+    position: absolute;
+    width: 130px;
+    height: 110%;
+    transform: rotate(10deg);
+    top: -5%;
+  }
+  .blue {
+    right: 40%;
+    background: var(--blue);
+    z-index: 2;
+  }
+  .white {
+    right: 25%;
+    background: var(--white);
+  }
+}
+//Desktop Only styles
+@media (min-width: 780px){
+  .hero {
+    justify-content: center;
+    padding-bottom: 0;
+    .bar {
+      display: block;
+    }
+    .profileImg {
+      width: 33%;
+    }
+    .gradient {
+      right: 42%;
+    }
+  }
+}
+//mobile Only styles
+@media (max-width: 781px){
+  .hero {
+    justify-content: end;
+    padding-bottom: 40px;
+    .bar {
+      display: none;
+    }
+    .profileImg {
+      width: 88%;
+    }
+    .gradient {
+      right: 75%;
+    }
+  }
+}
