@@ -3,7 +3,7 @@ const projects= [
   { projectName: "Restaurant app", projectBackground: "images/backgrounds/restaurant.png" , link: "https://github.com/JesseGreat/Little_Lemon/tree/main/littlelemon"},
   { projectName: "Todo list app", projectBackground: "images/backgrounds/todo-list.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/To_do_list"},
   { projectName: "Contact list app", projectBackground: "images/backgrounds/contactlist.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/ContactBook"},
-  { projectName: "Portfolio website", projectBackground: "images/backgrounds/portfolio.png" , link: "unknown"},
+  { projectName: "Portfolio website", projectBackground: "images/backgrounds/portfolio.png" , link: "https://github.com/Elvis-rozy/Jesse-Great"},
   { projectName: "tuneflix", projectBackground: "images/backgrounds/streaming.png" , link: "https://github.com/JesseGreat/audio_player"}
 ];
 

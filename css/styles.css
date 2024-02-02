@@ -233,13 +233,13 @@ header nav .mobileMenu .mobilelink:hover {
 }
 .work .works .jobCard .detaile .top {
   background-color: var(--white);
-  top: 3px;
-  left: 4px;
+  top: 2px;
+  left: 3px;
 }
 .work .works .jobCard .detaile .bottom {
   background-color: red;
-  top: 42%;
-  left: 5%;
+  top: 30%;
+  left: 3px;
 }
 .work .works .jobCard .detaile h5 {
   z-index: 2;
@@ -478,7 +478,7 @@ button:hover {
 }
 
 .logo {
-  font-size: 16px;
+  font-size: 13px;
   color: var(--blue);
   font-style: italic;
 }
@@ -589,12 +589,12 @@ button:hover {
     font-size: 13px;
   }
   .heading {
-    font-size: 25px;
+    font-size: 18px;
   }
   .imageShow {
     right: 12%;
   }
   .headingShow {
-    left: 3.3%;
+    left: 3.4%;
   }
 }
