@@ -2,7 +2,6 @@
   z-index: 4;
   background: hsl(0, 0%, 9%);
   position: relative;
-  height: 100vh;
 
   .works {
     display: grid;
@@ -23,7 +22,7 @@
         transform: scale(1.03);
       }
       &:hover .detaile .dash {
-        width: 100px;
+        width: 150px;
       }
       &:hover .link {
         transform: rotate(67.5deg);
@@ -85,6 +84,7 @@
 
       .jobCard {
         height: 120px;
+
         .detaile {
           h5{
             font-size: 14px;
@@ -103,10 +103,11 @@
       gap: 40px;
 
       .jobCard {
-        height: 150px;
+        height: 120px;
+
         .detaile {
           h5{
-            font-size: 18px;
+            font-size: 16px;
           }
         }
       }

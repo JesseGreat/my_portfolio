@@ -88,7 +88,7 @@
     height: 100vh;
 
     h1 {
-      width: 250%;
+      width: 350%;
     }
 
     .profileCard {
@@ -103,13 +103,13 @@
         flex-direction: column;
 
         .profile {
-          width: 250px;
+          width: 200px;
         }
       }
     }
   }
   @keyframes textPan {
     from{ left: 100%; }
-    to { left: -250%; }
+    to { left: -280%; }
   }
 }

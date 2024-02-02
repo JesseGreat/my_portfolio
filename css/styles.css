@@ -96,16 +96,15 @@ header nav .mobileMenu .mobilelink:hover {
   background: linear-gradient(45deg, black, #051119, black);
 }
 .hero h1 {
-  font-size: 30px;
+  font-size: 24px;
   text-transform: uppercase;
-  width: 40%;
   margin-left: 10%;
   font-weight: 100;
   z-index: 3;
 }
 .hero h1 strong {
   color: var(--blue);
-  font-size: 50px;
+  font-size: 36px;
   font-weight: 700;
 }
 .hero .role {
@@ -114,7 +113,7 @@ header nav .mobileMenu .mobilelink:hover {
 }
 .hero p {
   width: 40%;
-  margin: 0 0 5% 10%;
+  margin: 0 0 10px 10%;
   font-size: 12px;
   color: #837f7f;
   z-index: 3;
@@ -190,7 +189,6 @@ header nav .mobileMenu .mobilelink:hover {
   z-index: 4;
   background: hsl(0, 0%, 9%);
   position: relative;
-  height: 100vh;
 }
 .work .works {
   display: grid;
@@ -211,7 +209,7 @@ header nav .mobileMenu .mobilelink:hover {
   transform: scale(1.03);
 }
 .work .works .jobCard:hover .detaile .dash {
-  width: 100px;
+  width: 150px;
 }
 .work .works .jobCard:hover .link {
   transform: rotate(67.5deg);
@@ -279,10 +277,10 @@ header nav .mobileMenu .mobilelink:hover {
     gap: 40px;
   }
   .work .works .jobCard {
-    height: 150px;
+    height: 120px;
   }
   .work .works .jobCard .detaile h5 {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 .about {
@@ -368,7 +366,7 @@ header nav .mobileMenu .mobilelink:hover {
     height: 100vh;
   }
   .about h1 {
-    width: 250%;
+    width: 350%;
   }
   .about .profileCard {
     display: flex;
@@ -381,14 +379,14 @@ header nav .mobileMenu .mobilelink:hover {
     flex-direction: column;
   }
   .about .profileCard .profileGroup .profile {
-    width: 250px;
+    width: 200px;
   }
   @keyframes textPan {
     from {
       left: 100%;
     }
     to {
-      left: -250%;
+      left: -280%;
     }
   }
 }
@@ -430,7 +428,7 @@ header nav .mobileMenu .mobilelink:hover {
 }
 @media (min-width: 780px) {
   .contact {
-    padding: 30px 100px 70px;
+    padding: 30px 100px 40px;
   }
   .contact .contactLinks {
     gap: 5%;

@@ -1,9 +1,10 @@
 const projects= [
-  { projectName: "job1", projectBackground: "images/backgrounds/html-test1.png" },
-  { projectName: "job2", projectBackground: "images/backgrounds/html-test1.png" },
-  { projectName: "job3", projectBackground: "images/backgrounds/html-test1.png" },
-  { projectName: "job4", projectBackground: "images/backgrounds/html-test1.png" },
-  { projectName: "job5", projectBackground: "images/backgrounds/html-test1.png" }
+  { projectName: "Restaurant ordering API", projectBackground: "images/backgrounds/API.png" , link: "https://github.com/JesseGreat/API"},
+  { projectName: "Restaurant app", projectBackground: "images/backgrounds/restaurant.png" , link: "https://github.com/JesseGreat/Little_Lemon/tree/main/littlelemon"},
+  { projectName: "Todo list app", projectBackground: "images/backgrounds/todo-list.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/To_do_list"},
+  { projectName: "Contact list app", projectBackground: "images/backgrounds/contactlist.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/ContactBook"},
+  { projectName: "Portfolio website", projectBackground: "images/backgrounds/portfolio.png" , link: "unknown"},
+  { projectName: "tuneflix", projectBackground: "images/backgrounds/streaming.png" , link: "https://github.com/JesseGreat/audio_player"}
 ];
 
 const textObserver = new IntersectionObserver((entries) => entries.forEach(entry =>entry.isIntersecting? entry.target.classList.replace("headingHide", "headingShow") : entry.target.classList.replace("headingShow", "headingHide")));
@@ -16,12 +17,12 @@ window.addEventListener("DOMContentLoaded", () => displayWorks (projects));
 
 function displayWorks (works) {
   let displayWorks = works.map((work) => {
-    return `<a href="#" class="jobCard">
+    return `<a href=${work.link} class="jobCard">
         <img class="background" src=${work.projectBackground} alt="">
         <div class="detaile">
           <span class="dash top"></span>
           <span class="dash bottom"></span>
-          <h5>${work.projectName}</h5>
+          <h5 class="workName">${work.projectName}</h5>
         </div>
         <img class="link" src="images/icons/link-45deg.svg" alt="">
       </a>`;
