@@ -4,8 +4,6 @@
   position: relative;
 
   .works {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
     margin: 20px 0;
@@ -17,9 +15,15 @@
       align-items: start;
       position: relative;
       overflow: hidden;
+      transition: .3s;
+
+      &:hover {
+        border-radius: 8px;
+      }
 
       &:hover .background {
         transform: scale(1.03);
+        filter: blur(0);
       }
       &:hover .detaile .dash {
         width: 150px;
@@ -29,10 +33,17 @@
       }
 
       .background {
-        filter: brightness(.6);
+        filter: blur(.5px);
         transition: .3s;
         width: 100%;
         height: 100%;
+      }
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent, transparent, black);
       }
 
       .detaile {
@@ -44,19 +55,20 @@
           position: absolute;
           transition: .3s;
           width: 50px;
-          height: 1.97px;
+          height: 2px;
         }
         .top {
           background-color: var(--white);
-          top: 2px;
-          left: 3px;
+          top: 4.4px;
+          left: 5px;
         }
         .bottom {
           background-color: red;
-          top: 30%;
+          top: 35%;
           left: 3px;
         }
         h5 {
+          font-weight: 600;
           z-index: 2;
           font-style: italic;
           position: relative;
@@ -77,13 +89,15 @@
 //mobile Only styles
 @media (max-width: 781px){
   .work {
-    padding: 13vh 20px 40px;
+    padding: 13vh 40px 40px;
 
     .works {
-      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
 
       .jobCard {
-        height: 120px;
+        height: 300px;
 
         .detaile {
           h5{
@@ -100,14 +114,16 @@
     padding: 15vh 100px 40px;
 
     .works {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
 
       .jobCard {
-        height: 120px;
+        height: 170px;
 
         .detaile {
           h5{
-            font-size: 16px;
+            font-size: 20px;
           }
         }
       }

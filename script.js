@@ -4,7 +4,8 @@ const projects= [
   { projectName: "Todo list app", projectBackground: "images/backgrounds/todo-list.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/To_do_list"},
   { projectName: "Contact list app", projectBackground: "images/backgrounds/contactlist.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/ContactBook"},
   { projectName: "Portfolio website", projectBackground: "images/backgrounds/portfolio.png" , link: "https://github.com/Elvis-rozy/Jesse-Great"},
-  { projectName: "tuneflix", projectBackground: "images/backgrounds/streaming.png" , link: "https://github.com/JesseGreat/audio_player"}
+  { projectName: "tuneflix", projectBackground: "images/backgrounds/streaming.png" , link: "https://github.com/JesseGreat/audio_player"},
+  { projectName: "JJ-Lingua", projectBackground: "images/backgrounds/jj-lingua.png" , link: "https://github.com/JesseGreat/JJ-Lingua"}
 ];
 
 const textObserver = new IntersectionObserver((entries) => entries.forEach(entry =>entry.isIntersecting? entry.target.classList.replace("headingHide", "headingShow") : entry.target.classList.replace("headingShow", "headingHide")));
@@ -19,6 +20,7 @@ function displayWorks (works) {
   let displayWorks = works.map((work) => {
     return `<a href=${work.link} class="jobCard">
         <img class="background" src=${work.projectBackground} alt="">
+        <span class="overlay"></span>
         <div class="detaile">
           <span class="dash top"></span>
           <span class="dash bottom"></span>

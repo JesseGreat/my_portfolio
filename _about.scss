@@ -4,7 +4,7 @@
 
   .film {
     position: absolute;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     z-index: 2;
     top: 0;
@@ -16,7 +16,7 @@
     position: absolute;
     display: flex;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     top: 0;
     font-size: 400px;
     text-transform: uppercase;
@@ -35,10 +35,104 @@
         margin-bottom: 14px;
         color: var(--white);
       }
+
       p {
-        font-size: 13px;
+        font-size: 1.07rem;
         margin-bottom: 10px;
       }
+    }
+  }
+
+  .relative {
+    position: relative;
+    z-index: 4;
+    margin-bottom: 4rem;
+
+    .head {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      grid-template-columns: 1.4fr .6fr;
+      align-items: center;
+      gap: 60px;
+
+      .certificates {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      article {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        height: 100px;
+        padding: 20px;
+        background-color: #272626;
+        transition: .3s;
+        border-radius: 13px;
+        gap: 25px;
+
+        &:hover {
+          background-color: #474747;
+        }
+
+        .certIcon {
+          padding: 6px;
+          align-self: flex-start;
+          background: var(--blue);
+          border-radius: 50%;
+          width: 44px;
+        }
+
+        .blue {
+          color: var(--blue);
+        }
+
+        .gray {
+          color: gray;
+        }
+
+        h6 {
+          padding: 3px 0;
+          font-size: 1.1rem;
+          color: var(--white);
+        }
+      }
+
+      .profilePic {
+        width: 100%;
+      }
+    }
+  }
+
+  .skillsLoad {
+    position: relative;
+    width: 100vw;
+  }
+
+  .skillGroup {
+    position: absolute;
+    transition: .3s;
+    display: flex;
+  }
+
+  .skills {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    span {
+      border-radius: 8px;
+      gap: 7px;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
     }
   }
 }
@@ -55,6 +149,39 @@
     padding: 13vh 20px 40px;
     height: auto;
 
+    .skillsLoad {
+      height: 100px;
+    }
+
+    .skillGroup {
+      animation: carousel 10s linear infinite;
+      width: 450%;
+    }
+
+    .skills {
+      width: 100%;
+
+      span {
+        height: 100px;
+        width: 100px;
+
+        img {
+          width: 50px;
+          height: 45px;
+        }
+      }
+    }
+
+    .relative {
+      .grid {
+        display: block;
+      }
+
+      .profilePic {
+        display: none;
+      }
+    }
+
     h1 {
       width: 750%;
     }
@@ -64,7 +191,7 @@
       gap: 20px;
 
       .profileInfo {
-        margin: 20px 0 0;
+        margin: 20px 0 60px;
       }
 
       .profileGroup {
@@ -76,6 +203,7 @@
       }
     }
   }
+
   @keyframes textPan {
     from{ left: 100%; }
     to { left: -750%; }
@@ -85,7 +213,39 @@
 @media (min-width: 780px){
   .about {
     padding: 15vh 100px 40px;
-    height: 100vh;
+
+    .skillsLoad {
+      height: 124px;
+    }
+
+    .skillGroup {
+      animation: carousel 20s linear infinite;
+      width: 200%;
+    }
+
+    .skills {
+      width: 50%;
+
+      span {
+        height: 124px;
+        width: 120px;
+
+        img {
+          width: 70px;
+          height: 65px;
+        }
+      }
+    }
+
+    .relative {
+      .grid {
+        display: grid;
+      }
+
+      .profilePic {
+        display: block;
+      }
+    }
 
     h1 {
       width: 350%;
@@ -94,6 +254,7 @@
     .profileCard {
       display: flex;
       gap: 60px;
+      margin-bottom: 4rem;
 
       .profileInfo {
         margin: 0 0 0 40px;
@@ -108,6 +269,7 @@
       }
     }
   }
+
   @keyframes textPan {
     from{ left: 100%; }
     to { left: -280%; }

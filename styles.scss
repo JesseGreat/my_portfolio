@@ -2,6 +2,7 @@
 @import "hero";
 @import "work";
 @import "about";
+@import "services";
 @import "contact";
 
 * {
@@ -20,6 +21,14 @@
   --blue : #127b87;
   --white: #d7d7d7;
   --gray: #636363;
+}
+
+/*=====================================
+Skills Carousel Animation
+=====================================*/
+@keyframes carousel {
+  from { left: 0; }
+  to { left: -100%; }
 }
 
 body {
@@ -94,7 +103,7 @@ button {
 
   .heading {
     position: relative;
-    font-weight: 100;
+    font-weight: 600;
     text-align: start;
     margin-bottom: -2px;
     color: var(--blue);
@@ -139,18 +148,18 @@ button {
 //mobile Only styles
 @media (max-width: 781px){
   button {
-    width: 85px;
-    height: 28px;
-    font-size: 11px;
+    width: 100px;
+    height: 35px;
+    font-size: 12px;
   }
   .heading {
-    font-size: 17px;
+    font-size: 20px;
   }
   .imageShow {
     right: 2%;
   }
   .headingShow {
-    left: 10.3%;
+    left: 12%;
   }
 }
 //Desktop Only styles
@@ -161,12 +170,12 @@ button {
     font-size: 13px;
   }
   .heading {
-    font-size: 18px;
+    font-size: 1.7rem;
   }
   .imageShow {
     right: 12%;
   }
   .headingShow {
-    left: 3.4%;
+    left: 4%;
   }
 }
