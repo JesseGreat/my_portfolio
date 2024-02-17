@@ -256,8 +256,60 @@ header nav .mobileMenu .mobilelink:hover {
   position: absolute;
   transition: 0.3s;
   right: 10px;
-  bottom: 10px;
+  bottom: 25px;
   width: 28px;
+}
+.work .videoContainer {
+  width: 80vw;
+  height: 60vh;
+  top: 20vh;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  background: black;
+}
+.work .videoContainer::before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  top: -30%;
+  height: 105vh;
+  background: rgb(0, 0, 0);
+}
+.work .videoContainer .exitIcon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  z-index: 3;
+  top: -45px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.work .videoContainer .exitIcon:hover {
+  transform: scale(0.96);
+}
+.work .videoContainer .videoPlayback {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.work .videoContainer .projectLink {
+  position: absolute;
+  bottom: -15%;
+}
+
+.hideItem {
+  z-index: -1;
+  opacity: 0;
+}
+
+.showItem {
+  opacity: 1;
+  z-index: 5;
 }
 
 @media (max-width: 781px) {
@@ -531,6 +583,7 @@ header nav .mobileMenu .mobilelink:hover {
 .services .servicesList {
   display: grid;
   justify-items: center;
+  gap: 40px 20px;
 }
 .services .intro {
   margin: 30px 0;

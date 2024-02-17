@@ -79,11 +79,67 @@
         position: absolute;
         transition: .3s;
         right: 10px;
-        bottom: 10px;
+        bottom: 25px;
         width: 28px;
       }
     }
   }
+
+  .videoContainer {
+    width: 80vw;
+    height: 60vh;
+    top: 20vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+    background: black;
+
+    &::before{
+      content: "";
+      position: absolute;
+      width: 100vw;
+      top: -30%;
+      height: 105vh;
+      background: rgb(0 0 0);
+    }
+
+    .exitIcon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 0;
+      display: flex;
+      z-index: 3;
+      top: -45px;
+      cursor: pointer;
+      transition: .2s;
+
+      &:hover {
+        transform: scale(.96);
+      }
+    }
+
+    .videoPlayback {
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+    .projectLink {
+      position: absolute;
+      bottom: -15%;
+    }
+  }
+}
+.hideItem {
+  z-index: -1;
+  opacity: 0;
+}
+.showItem {
+  opacity: 1;
+  z-index: 5;
 }
 
 //mobile Only styles

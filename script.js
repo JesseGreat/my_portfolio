@@ -1,12 +1,16 @@
 const projects= [
-  { projectName: "Restaurant ordering API", projectBackground: "images/backgrounds/API.png" , link: "https://github.com/JesseGreat/API"},
-  { projectName: "Restaurant app", projectBackground: "images/backgrounds/restaurant.png" , link: "https://github.com/JesseGreat/Little_Lemon/tree/main/littlelemon"},
-  { projectName: "Todo list app", projectBackground: "images/backgrounds/todo-list.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/To_do_list"},
-  { projectName: "Contact list app", projectBackground: "images/backgrounds/contactlist.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/ContactBook"},
-  { projectName: "Portfolio website", projectBackground: "images/backgrounds/portfolio.png" , link: "https://github.com/Elvis-rozy/Jesse-Great"},
-  { projectName: "tuneflix", projectBackground: "images/backgrounds/streaming.png" , link: "https://github.com/JesseGreat/audio_player"},
-  { projectName: "JJ-Lingua", projectBackground: "images/backgrounds/jj-lingua.png" , link: "https://github.com/JesseGreat/JJ-Lingua"}
+  { id: 1, projectName: "Restaurant ordering API", projectBackground: "images/backgrounds/API.png" , link: "https://github.com/JesseGreat/API", videoSrc: "https://www.youtube.com/embed/kiMDtGt0lQM?autoplay=1&mute=1si=93_r_s0MIIjWxnIx"},
+  { id: 2, projectName: "Restaurant app", projectBackground: "images/backgrounds/restaurant.png" , link: "https://github.com/JesseGreat/Little_Lemon/tree/main/littlelemon", videoSrc: "https://www.youtube.com/embed/7Tkbot5sb9E?autoplay=1&mute=1si=8kPLXdmYUOQSpB8v"},
+  { id: 3, projectName: "Todo list app", projectBackground: "images/backgrounds/todo-list.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/To_do_list", videoSrc: "https://www.youtube.com/embed/XyKMphpO9sg?autoplay=1&mute=1si=seUafdEuK5mjMO7b"},
+  { id: 4, projectName: "Contact list app", projectBackground: "images/backgrounds/contactlist.png" , link: "https://github.com/JesseGreat/Codsoft/tree/main/ContactBook", videoSrc: "https://www.youtube.com/embed/kNyMMOzBR5E?autoplay=1&mute=1si=TgjxoUeevlgwpIfa"},
+  { id: 5, projectName: "Portfolio website", projectBackground: "images/backgrounds/portfolio.png" , link: "https://github.com/JesseGreat/JesseGreat", videoSrc: "https://www.youtube.com/embed/"},
+  { id: 6, projectName: "tuneflix", projectBackground: "images/backgrounds/streaming.png" , link: "https://github.com/JesseGreat/audio_player", videoSrc: "https://www.youtube.com/embed/cA-nFV3qs4w?autoplay=1&mute=1si=660ndSFNsIsTpYku"},
+  { id: 7, projectName: "JJ-Lingua", projectBackground: "images/backgrounds/jj-lingua.png" , link: "https://github.com/JesseGreat/JJ-Lingua", videoSrc: "https://www.youtube.com/embed/qAnrNlHga3s?autoplay=1&mute=1si=XEUe0NHmmir54J1M"}
 ];
+const videoSection = document.querySelector(".videoContainer");
+const videoPlayback = document.querySelector(".videoPlayback");
+const projectLink = document.querySelector(".projectLink");
+const exitIcon = document.querySelector(".exitIcon");
 
 const textObserver = new IntersectionObserver((entries) => entries.forEach(entry =>entry.isIntersecting? entry.target.classList.replace("headingHide", "headingShow") : entry.target.classList.replace("headingShow", "headingHide")));
 document.querySelectorAll(".hiddenText").forEach(element => textObserver.observe(element));
@@ -14,23 +18,44 @@ document.querySelectorAll(".hiddenText").forEach(element => textObserver.observe
 const imageObserver = new IntersectionObserver((entries) => entries.forEach(entry =>entry.isIntersecting? entry.target.classList.replace("imageHide", "imageShow") : entry.target.classList.replace("imageShow", "imageHide")));
 document.querySelectorAll(".hiddenImage").forEach(element => imageObserver.observe(element));
 
-window.addEventListener("DOMContentLoaded", () => displayWorks (projects));
+window.addEventListener("DOMContentLoaded", () => {
+  displayWorks (projects);
+  playVideo(projects);
+});
 
 function displayWorks (works) {
   let displayWorks = works.map((work) => {
-    return `<a href=${work.link} class="jobCard">
+    return `<div class="jobCard">
         <img class="background" src=${work.projectBackground} alt="">
-        <span class="overlay"></span>
+        <span id=${work.id} class="overlay"></span>
         <div class="detaile">
           <span class="dash top"></span>
           <span class="dash bottom"></span>
           <h5 class="workName">${work.projectName}</h5>
         </div>
         <img class="link" src="images/icons/link-45deg.svg" alt="">
-      </a>`;
+      </div>`;
   });
   displayWorks = displayWorks.join(""), document.querySelector(".works").innerHTML = displayWorks;
 }
+//The function that plays  video from TOP VIDEOS Section
+function playVideo (video) {
+  let index = 0;
+  Array.from(document.getElementsByClassName("jobCard")).forEach((element)=>{
+    element.addEventListener("click", (event) => {
+      index = event.target.id;
+      videoSection.classList.replace("hideItem", "showItem");
+      index -= 1;
+      videoPlayback.src = video[index].videoSrc;
+      projectLink.setAttribute("href", video[index].link);
+    });
+  });
+}
+exitIcon.onclick=()=>{
+  videoSection.classList.replace("showItem", "hideItem");
+  videoPlayback.src = "";
+  projectLink.setAttribute("href", "");
+};
 
 const hamburger = document.getElementById("hamburger");
 const mobileMenu = document.querySelector(".mobileMenu");
