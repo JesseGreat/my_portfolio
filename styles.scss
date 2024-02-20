@@ -44,7 +44,7 @@ button {
   border-radius: 2px;
   border-left: 3px solid red;
   border-bottom: 3px solid white;
-  background: transparent;
+  background: #010406;
   color: white;
   transition: .3s;
 
@@ -156,7 +156,7 @@ button {
     font-size: 20px;
   }
   .imageShow {
-    right: 2%;
+    display: none;
   }
   .headingShow {
     left: 12%;

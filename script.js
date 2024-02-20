@@ -12,6 +12,35 @@ const videoPlayback = document.querySelector(".videoPlayback");
 const projectLink = document.querySelector(".projectLink");
 const exitIcon = document.querySelector(".exitIcon");
 
+const textElement = document.getElementById("heroName");
+const phrases = ["Oluwatobiloba Okunogbe"];
+let phraseIndex = 0;
+
+setInterval(() => {
+  const currentPhrase = phrases[phraseIndex];
+  const textLength = currentPhrase.length;
+  let i = 0;
+
+  const typingInterval = setInterval(() => {
+    const newText = currentPhrase.substring(0, i);
+    textElement.textContent = newText;
+    i++;
+
+    if (i > textLength) {
+      clearInterval(typingInterval);
+      phraseIndex++;
+
+      if (phraseIndex >= phrases.length) {
+        phraseIndex = 0;
+      }
+
+      setTimeout(() => {
+        textElement.classList.add("typing");
+      }, 500);
+    }
+  }, 100);
+}, 5000);
+
 const textObserver = new IntersectionObserver((entries) => entries.forEach(entry =>entry.isIntersecting? entry.target.classList.replace("headingHide", "headingShow") : entry.target.classList.replace("headingShow", "headingHide")));
 document.querySelectorAll(".hiddenText").forEach(element => textObserver.observe(element));
 
